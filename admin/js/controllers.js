@@ -94,13 +94,13 @@ function MainCtrl($http, $scope) {
                 if($scope.users.length) {
                     $scope.me = $scope.users[0];
                 }
+                $scope.loadUsers();
 
-
-            }, function errorCallback(response) {
+        }, function errorCallback(response) {
                 alert('error');
-            });
+                $scope.loadUsers();
+        });
 
-        $scope.loadUsers();
     };
 
     $scope.loadUsers();
