@@ -1,0 +1,133 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="col-sm-12">
+        <h2>{{ 'Добро пожаловать в систему переводов' | translate }}</h2>
+    </div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<div class="wrapper wrapper-content">
+<div class="row">
+<div class="col-lg-4">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Ваш текущий счет</h5>
+            <div ibox-tools></div>
+        </div>
+        <div class="ibox-content">
+            <div>
+                <div class="pull-right text-right">
+                    <bar-chart data="main.BarChart.data" options="main.BarChart.options"></bar-chart>
+                </div>
+                <h4>Ваша активность</h4>
+            </div>
+            <div>
+                <div class="pull-right text-right">
+                    <strong>$ {{me.balance}}</strong>
+                </div>
+                <h4>Текущий счет</h4>
+            </div>
+        </div>
+    </div>
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Не обращайте внимание</h5>
+            <div ibox-tools></div>
+        </div>
+        <div class="ibox-content no-padding">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p><a class="text-info" href="">@Alan Marry</a> Набор сообщений оставил для красоты, так как страница выглядит совсем пустой.</p>
+                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago</small>
+                </li>
+                <li class="list-group-item">
+                    <p><a class="text-info" href="">@Stock Man</a> Страница выглядит совсем пустой! </p>
+
+                    <div class="text-center m">
+                        <span id="sparkline8"></span>
+                    </div>
+                    <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Пользователи</h5>
+
+            <!-- This is example of local custom ibox tools -->
+            <div class="ibox-tools">
+                <span class="label label-warning-light">Переведите денег</span>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div>
+                <div class="feed-activity-list">
+                    <div class="feed-element" ng-repeat="u in users track by $index">
+                        <a ui-sref="profile" class="pull-left">
+                            <img alt="image" class="img-circle" ng-src="img/a{{$index + 1}}.jpg">
+                        </a>
+                        <div class="media-body">
+                            <strong>{{u.name}}</strong>
+                            <small ng-if="!$index">(это вы)</small>
+                            <br>
+                            <small class="text-muted">На счету $ {{u.balance}}</small>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" ng-model="u.transfer" ng-disabled="!$index">
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary btn-small btn-block" ng-click="transferTo(u.id, u.transfer)">$</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="col-lg-4">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Alpha project</h5>
+            <div ibox-tools></div>
+        </div>
+        <div class="ibox-content ibox-heading">
+            <h3>История перечислений</h3>
+            <small><i class="fa fa-map-marker"></i> История переводов.</small>
+        </div>
+        <div class="ibox-content inspinia-timeline">
+
+            <div class="timeline-item">
+                <div class="row">
+                    <div class="col-xs-3 date">
+                        <i class="fa fa-briefcase"></i>
+                        6:00 am
+                        <br/>
+                        <small class="text-navy">2 hour ago</small>
+                    </div>
+                    <div class="col-xs-7 content no-top-border">
+                        <p class="m-b-xs"><strong>Информация</strong></p>
+
+                        <p>Данные функционал не работает и выполнен, чтобы заполнить место на странице</p>
+
+                        <p><line-chart data="main.LineChart.data" options="main.LineChart.options"></line-chart></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
